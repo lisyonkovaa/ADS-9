@@ -14,7 +14,7 @@ BST<std::string> makeTree(const char* filename) {
     while (!file.eof()) {
         file >> word;
         word1 = word2 = "";
-        if (w.find(",") != -1) {
+        if (word.find(",") != -1) {
                 int length = word.length();
                 int find = word.find(",");
                 if ((find != length - 1) && ((word[find + 1] >= 'A' && word[find + 1] <= 'Z') ||
@@ -33,7 +33,7 @@ BST<std::string> makeTree(const char* filename) {
             Mytree.add(word1);
             Mytree.add(word2);
         } else {
-            w = get_corr_word(word);
+            word = get_corr_word(word);
             Mytree.add(word);
         }
     }
